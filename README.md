@@ -5,14 +5,8 @@ Um die Mods leichter verwalten und installieren zu können, empfehle ich zwar di
 
 Jedoch ist für technisch versierte auch jeder andere Launcher erlaubt, der Modded Minecraft unterstützt und, vor allem, für die, die auf einem Mac spielen, Zugriff auf das Mikrofon bekommen kann 
 
-Als erstes installieren wir die Modrinth App.
+Als erstes installieren wir die [Modrinth App](https://modrinth.com/app).
 
-Windows: 
-(Hier soll ein einklickbarer Link reinkommen. Ich weiß nicht genau, wie das auf Github im ReadMe gemacht werden muss)
-Mac:
-(Hier soll ein einklickbarer Link reinkommen. Ich weiß nicht genau, wie das auf Github im ReadMe gemacht werden muss)
-Linux:
-Wenn du Linux nutzt, wirst du dieses Tutorial wahrscheinlich nicht brauchen. Hier ein Link zu der Modrinth Website (hyperlink). 
 
-(sind die drei optionen vielleicht als tabelle möglich?)
 
+<img width="1358" height="867" alt="1" src="https://github.com/user-attachments/assets/51bafdc6-aa0f-4ce8-b0d5-74a8d97f3337" />
