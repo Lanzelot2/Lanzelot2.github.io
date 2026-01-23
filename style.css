@@ -1,13 +1,20 @@
-/* Standard-Stil für Light Mode */
-body {
-    color: #000;
-    background-color: #fff;
+:root {
+  color-scheme: light dark; /* erlaubt dem Browser passende Defaults */
 }
 
-/* Dark Mode - Automatisch basierend auf Nutzer-Einstellung */
 @media (prefers-color-scheme: dark) {
-    body {
-        color: #fff;
-        background-color: #000;
-    }
+  body {
+    background: #0d1117;
+    color: #c9d1d9;
+  }
+
+  a { color: #58a6ff; }
+
+  /* typische Container/Boxen */
+  .container, main, article, section {
+    background: transparent;
+  }
+
+  /* Bilder optional leicht abdunkeln (nur wenn nötig) */
+  /* img { filter: brightness(0.95) contrast(1.05); } */
 }
