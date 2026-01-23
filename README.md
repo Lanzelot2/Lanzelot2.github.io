@@ -9,4 +9,8 @@ Als erstes installieren wir die [Modrinth App](https://modrinth.com/app).
 
 
 
-<img width="1358" height="867" alt="1" src="https://github.com/user-attachments/assets/51bafdc6-aa0f-4ce8-b0d5-74a8d97f3337" />
+<img
+  alt="1"
+  src="https://github.com/user-attachments/assets/51bafdc6-aa0f-4ce8-b0d5-74a8d97f3337"
+  style="max-width:100%; height:auto;"
+/>
