@@ -82,18 +82,48 @@ Auf dem EbeluCraft-Server <strong>kann man auch komplett ohne Mods spielen</stro
 
   <div class="step__grid">
     <div class="step__text">
-      Geht zu <strong>Default Installation</strong> und stellt ein, wie viel RAM Minecraft nutzen darf.
+      Geht zu <strong>Default Installation</strong> und stellt ein, wie viel RAM Minecraft nutzen darf.<br><br>
+      <strong>Wichtig:</strong> Die Werte unten richten sich nach dem <strong>Gesamt-RAM eures PCs</strong> (z.&nbsp;B. “8 GB RAM insgesamt”), nicht danach, wie viel gerade frei ist.
       <div class="ram-grid">
-        <div class="ram-card"><strong>Unter 8 GB RAM</strong><span>2–3 GB</span></div>
-        <div class="ram-card"><strong>8 GB RAM</strong><span>3–4 GB</span></div>
-        <div class="ram-card"><strong>16+ GB RAM</strong><span>6–max. 10 GB (zu viel kann sogar schaden)</span></div>
+        <div class="ram-card"><strong>PC hat unter 8 GB RAM</strong><span>2–3 GB zuweisen</span></div>
+        <div class="ram-card"><strong>PC hat 8 GB RAM</strong><span>3–4 GB zuweisen</span></div>
+        <div class="ram-card"><strong>PC hat 16+ GB RAM</strong><span>6–max. 10 GB zuweisen (zu viel kann sogar schaden)</span></div>
       </div>
+      <small style="color:rgba(176,176,176,.78);">
+        Windows: Task-Manager → Leistung → Arbeitsspeicher. &nbsp; macOS: Über diesen Mac.
+      </small>
     </div>
 
     <div class="step__media">
       <a href="https://github.com/user-attachments/assets/78cd1633-3a9b-4440-bdb5-b45796b5b10b" target="_blank" rel="noopener">
         <img alt="RAM einstellen" src="https://github.com/user-attachments/assets/78cd1633-3a9b-4440-bdb5-b45796b5b10b" loading="lazy">
       </a>
+    </div>
+  </div>
+</section>
+
+<section class="step step--textonly">
+  <div class="step__head">
+    <div class="step__num"></div>
+    <h3>Modpack herunterladen</h3>
+  </div>
+
+  <div class="step__grid">
+    <div class="step__text">
+      Ladet das Modpack als <strong>.mrpack</strong> runter und speichert die Datei irgendwo, wo ihr sie gleich wiederfindet (z.&nbsp;B. Downloads).<br><br>
+
+      <strong>Download-Button einrichten:</strong><br>
+      Legt die Datei in dieses Repo z.&nbsp;B. in den Ordner <code>downloads/</code> und passt den Dateinamen unten an.
+      Dann lädt der Button die Datei direkt über GitHub Pages runter.
+      <div class="btnrow">
+        <a class="btn" href="downloads/EbeluCraft.mrpack" download>
+          ⬇️ Modpack herunterladen <small>(.mrpack)</small>
+        </a>
+      </div>
+
+      <small style="color:rgba(176,176,176,.78);">
+        Falls ihr lieber Releases nutzt: Ihr könnt auch einen GitHub Release erstellen und hier stattdessen den Link zum Release-Asset eintragen.
+      </small>
     </div>
   </div>
 </section>
