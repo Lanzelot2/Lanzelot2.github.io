@@ -8,12 +8,11 @@
 Auf dem EbeluCraft-Server <strong>kann man auch komplett ohne Mods spielen</strong>, aber für Performance und Features (z.&nbsp;B. Ingame-Voice-Chat) ist das Modpack klar empfohlen.
 </p>
 
-<h2>Voraussetzungen</h2>
-<ul class="checklist">
-  <li>Minecraft (Java Edition) ist installiert</li>
-  <li>Windows / macOS / Linux</li>
-  <li><strong>macOS:</strong> ggf. Mikrofon-Berechtigung später erlauben (Voice-Chat)</li>
-</ul>
+<div class="note">
+<strong>Hinweis für Fortgeschrittene:</strong> Wenn ihr euch technisch gut auskennt, könnt ihr auch andere Launcher/Apps nutzen, um Mods zu starten.
+Empfohlen ist trotzdem die <strong>Modrinth App</strong>, weil es damit am einfachsten ist.<br><br>
+<strong>Wichtig (macOS):</strong> Falls ihr einen alternativen Launcher nutzt, achtet darauf, dass er <strong>Mikrofonzugriff</strong> für den Voice-Chat sauber unterstützt. Das ist auf macOS nicht bei allen Launchern zuverlässig der Fall.
+</div>
 
 <h2>Schritt-für-Schritt</h2>
 
@@ -83,12 +82,14 @@ Auf dem EbeluCraft-Server <strong>kann man auch komplett ohne Mods spielen</stro
   <div class="step__grid">
     <div class="step__text">
       Geht zu <strong>Default Installation</strong> und stellt ein, wie viel RAM Minecraft nutzen darf.<br><br>
-      <strong>Wichtig:</strong> Die Werte unten richten sich nach dem <strong>Gesamt-RAM eures PCs</strong> (z.&nbsp;B. “8 GB RAM insgesamt”), nicht danach, wie viel gerade frei ist.
+      <strong>Wichtig:</strong> Die Werte richten sich nach dem <strong>Gesamt-RAM eures PCs</strong> (z.&nbsp;B. “8 GB RAM insgesamt”), nicht danach, wie viel gerade frei ist.
+
       <div class="ram-grid">
         <div class="ram-card"><strong>PC hat unter 8 GB RAM</strong><span>2–3 GB zuweisen</span></div>
         <div class="ram-card"><strong>PC hat 8 GB RAM</strong><span>3–4 GB zuweisen</span></div>
         <div class="ram-card"><strong>PC hat 16+ GB RAM</strong><span>6–max. 10 GB zuweisen (zu viel kann sogar schaden)</span></div>
       </div>
+
       <small style="color:rgba(176,176,176,.78);">
         Windows: Task-Manager → Leistung → Arbeitsspeicher. &nbsp; macOS: Über diesen Mac.
       </small>
@@ -105,24 +106,39 @@ Auf dem EbeluCraft-Server <strong>kann man auch komplett ohne Mods spielen</stro
 <section class="step step--textonly">
   <div class="step__head">
     <div class="step__num"></div>
-    <h3>Modpack herunterladen</h3>
+    <h3>Modpacks herunterladen</h3>
   </div>
 
   <div class="step__grid">
     <div class="step__text">
-      Ladet das Modpack als <strong>.mrpack</strong> runter und speichert die Datei irgendwo, wo ihr sie gleich wiederfindet (z.&nbsp;B. Downloads).<br><br>
+      Es gibt zwei Versionen. Wenn ihr unsicher seid: Nehmt erstmal <strong>Standard</strong>.
+      Für schwächere PCs (oder wenn ihr möglichst wenig Aufwand wollt) ist <strong>Lite/Performance</strong> ideal.<br><br>
 
-      <strong>Download-Button einrichten:</strong><br>
-      Legt die Datei in dieses Repo z.&nbsp;B. in den Ordner <code>downloads/</code> und passt den Dateinamen unten an.
-      Dann lädt der Button die Datei direkt über GitHub Pages runter.
-      <div class="btnrow">
-        <a class="btn" href="downloads/EbeluCraft.mrpack" download>
-          ⬇️ Modpack herunterladen <small>(.mrpack)</small>
-        </a>
+      <div class="download-grid">
+        <div class="dl-card">
+          <div class="dl-title">Lite / Performance (Low-End)</div>
+          <p class="dl-desc">
+            Fokus auf Performance + Essentials (z.&nbsp;B. Voice-Chat). Gedacht für schwächere PCs/Laptops.
+          </p>
+          <div class="btnrow">
+            <a class="btn" href="downloads/EbeluCraft-Lite.mrpack" download>⬇️ Download <small>(.mrpack)</small></a>
+          </div>
+        </div>
+
+        <div class="dl-card">
+          <div class="dl-title">Standard (Normal)</div>
+          <p class="dl-desc">
+            Mehr Features/Komfort. Zusätzlich gibt es <strong>optionale Extras</strong>, die ihr im Modrinth-Profil aktivieren könnt
+            (sinnvoll für Gaming-PCs/High-End; nicht für typische Laptops).
+          </p>
+          <div class="btnrow">
+            <a class="btn" href="downloads/EbeluCraft-Standard.mrpack" download>⬇️ Download <small>(.mrpack)</small></a>
+          </div>
+        </div>
       </div>
 
-      <small style="color:rgba(176,176,176,.78);">
-        Falls ihr lieber Releases nutzt: Ihr könnt auch einen GitHub Release erstellen und hier stattdessen den Link zum Release-Asset eintragen.
+      <small style="color:rgba(176,176,176,.78); display:block; margin-top:10px;">
+        Setup im Repo: Legt die Dateien z.&nbsp;B. in <code>/downloads/</code> ab und passt nur die Dateinamen oben an.
       </small>
     </div>
   </div>
@@ -203,14 +219,18 @@ Auf dem EbeluCraft-Server <strong>kann man auch komplett ohne Mods spielen</stro
 <p>
 Im Profil unter <strong>Content</strong> seht ihr alle installierten Mods.
 Dort könnt ihr Mods updaten, deaktivieren (falls etwas stört) oder optional wieder aktivieren.
-<strong>Außerdem sind im Modpack ein paar zusätzliche Mods schon enthalten, aber deaktiviert</strong> – wenn ihr wollt, könnt ihr sie dort einfach aktivieren.
+<strong>Außerdem sind im Standard-Modpack ein paar zusätzliche Mods schon enthalten, aber deaktiviert</strong> – wenn ihr wollt, könnt ihr sie dort einfach aktivieren (sinnvoll für Gaming-PCs/High-End).
 </p>
 
 <details class="faq">
   <summary>Wenn Minecraft nicht startet / laggt</summary>
   Prüft zuerst die RAM-Einstellung. Zu wenig oder viel zu viel kann Probleme machen.<br>
-  Schließt außerdem andere RAM-fressende Programme (viele Browser-Tabs, Discord-Streams, etc.).<br>
-  macOS: Mikrofon-Berechtigungen prüfen (für Voice-Chat).
+  Schließt außerdem andere RAM-fressende Programme (viele Browser-Tabs, Discord-Streams, etc.).<br><br>
+
+  <strong>macOS / Voice-Chat:</strong> Wenn ihr einen alternativen Launcher nutzt, prüft zuerst, ob er Mikrofonzugriff sauber unterstützt.
+  In den Systemeinstellungen solltet ihr außerdem die Mikrofonberechtigung für den Launcher/Minecraft kontrollieren.<br><br>
+
+  Wenn ihr nicht weiterkommt: Fragt einfach nach, dann bekommt ihr Hilfe.
 </details>
 
 </div>
