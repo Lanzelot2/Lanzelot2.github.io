@@ -153,7 +153,7 @@ Empfohlen ist trotzdem die <strong>Modrinth App</strong>, weil es damit am einfa
   <div class="step__grid">
     <div class="step__text">
       Klickt links auf das <strong>+</strong> und wählt <strong>From File</strong>.
-      Alternativ könnt ihr das Modpack auch per Drag &amp; Drop in die App ziehen.
+      Alternativ könnt ihr das Modpack auch per Drag &amp; Drop in die App ziehen, wenn ihr im <strong>Create an Instance</strong> Screen seid.
     </div>
 
     <div class="step__media">
