@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="style.css">
 > Auf dem EbeluCraft Server ist es zwar möglich komplett **ohne** Mods, jedoch ist es aus Performance und Gameplay technischen Gründen stärkstens empfohlen mit einigen Mods zu spielen
 
 Um die Mods leichter verwalten und installieren zu können, empfehle ich zwar die Modrinth App.
