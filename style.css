@@ -26,7 +26,7 @@ html,body{
   line-height:1.65;
 }
 
-/* ===== Theme-Container & Header: Breite freigeben + blauen Titel ausblenden ===== */
+/* ===== Theme-Container: Breite freigeben ===== */
 :where(main, article, .page-content, .main-content, .wrapper, .container, .container-lg, .container-xl, .markdown-body, .post, .post-content){
   width:100% !important;
   max-width:none !important;
@@ -34,18 +34,32 @@ html,body{
   margin-right:auto !important;
 }
 
-.page-header, header.page-header,
-.site-header, header.site-header{
-  padding:0 !important;
-  margin:0 !important;
-  border:0 !important;
-  background:transparent !important;
-  box-shadow:none !important;
+/* ===== Theme-Header: NICHT verstecken, sondern bündig + ohne hässliche Linie ===== */
+:where(.site-header, header.site-header, .page-header, header.page-header){
+  width: min(75vw, 1600px) !important;
+  max-width: calc(100vw - 28px) !important;
+  margin: 0 auto !important;
+  padding: 14px clamp(14px, 2vw, 26px) 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
 }
-.page-header .project-name,
-.page-header .project-tagline,
-.site-title, .site-description{
-  display:none !important;
+
+:where(.site-header, .page-header) *{
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Falls dein Theme eine HR/Border direkt nach dem Header setzt */
+:where(.site-header + hr, .page-header + hr){ display:none !important; }
+
+/* Header-Link-Farbe (optional, passt zu deinem Look) */
+:where(.site-header a, .page-header a){
+  color: var(--link) !important;
+  text-decoration: none;
+}
+:where(.site-header a:hover, .page-header a:hover){
+  color: var(--linkHover) !important;
 }
 
 /* ===== Wrapper ===== */
@@ -57,7 +71,7 @@ html,body{
   overflow-wrap: anywhere;
 }
 
-/* Überschriften: Theme-Margins killen (das war dein “1 Zeile nach unten”-Problem) */
+/* Überschriften: Theme-Margins killen (das “runtergerutscht” Problem) */
 .tutorial h1, .tutorial h2, .tutorial h3{
   margin: 0 !important;
   padding: 0 !important;
@@ -74,24 +88,27 @@ html,body{
   font-size: clamp(1.25rem, 1.7vw, 1.9rem);
   margin: 1.7em 0 .6em !important;
 }
-.tutorial h3{
-  font-size: 1.08rem;
-}
+.tutorial h3{ font-size: 1.08rem; }
 
 .tutorial p{ margin:.85em 0; }
-.tutorial .lead{ color:var(--muted); max-width: 80ch; }
+.tutorial .lead{ color:var(--muted); max-width: 85ch; }
 
 .tutorial a{ color:var(--link); text-underline-offset:.18em; word-break:break-word; }
 .tutorial a:hover{ color:var(--linkHover); }
 
-/* keine HR-Streifen */
 .tutorial hr{ display:none; }
 
-/* Listen */
-.checklist{ margin:.7em 0 0; padding-left: 1.1em; }
-.checklist li{ margin:.35em 0; }
+/* ===== Hinweisbox (Fortgeschrittene) ===== */
+.note{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 14px 16px;
+  color: var(--muted);
+  margin: 14px 0 0;
+}
 
-/* ===== Buttons (Download) ===== */
+/* ===== Buttons / Download ===== */
 .btnrow{
   display:flex;
   flex-wrap:wrap;
@@ -101,6 +118,7 @@ html,body{
 .btn{
   display:inline-flex;
   align-items:center;
+  justify-content:center;
   gap:.55em;
   padding: .65em .9em;
   border-radius: 14px;
@@ -109,10 +127,28 @@ html,body{
   text-decoration: none;
   color: var(--text);
 }
-.btn:hover{
-  background: rgba(255,255,255,.09);
-}
+.btn:hover{ background: rgba(255,255,255,.09); }
 .btn small{ color: var(--muted); }
+
+/* Download-Layout */
+.download-grid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 10px;
+}
+.dl-card{
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 16px;
+  padding: 12px 12px;
+}
+.dl-title{
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.dl-desc{ color: var(--muted); margin: 0 0 8px; }
 
 /* ===== Steps ===== */
 .steps{
@@ -133,7 +169,7 @@ html,body{
 .step__head{
   display:flex;
   gap:.75em;
-  align-items:center;            /* baseline raus -> wirkt nicht “runtergerutscht” */
+  align-items:center;
   padding: 14px 16px 8px;
 }
 
@@ -146,48 +182,33 @@ html,body{
 
 .step__grid{
   display:grid;
-  grid-template-columns: 1fr 2fr; /* Desktop: Bild größer */
+  grid-template-columns: 1fr 2fr;
   gap: 16px;
   padding: 0 16px 16px;
   align-items:start;
 }
-
-.step__grid--single{
-  grid-template-columns: 1fr;
-}
+.step__grid--single{ grid-template-columns: 1fr; }
 
 .step__text{ color: var(--muted); }
 
-/* Media: harte Overrides, damit Bilder NICHT klein bleiben */
-.step__media, .pair__media{
-  min-width: 0;
-}
-.step__media a, .pair__media a{
-  display:block;
-  width:100%;
-}
-
-/* Bilder: kein weißer Rahmen mehr */
+/* Bilder: kein weißer Rand, immer groß */
 .tutorial img{
   display:block;
   width:100% !important;
   max-width:100% !important;
   height:auto;
 
-  border: 0 !important;                 /* entfernt den “weißen Rahmen” */
+  border: 0 !important;
   border-radius: 14px;
   box-shadow:
     0 12px 32px var(--shadow),
-    0 0 0 1px rgba(0,0,0,.35);          /* dunkle Outline statt weißem Rand */
+    0 0 0 1px rgba(0,0,0,.35);
 }
 
-/* Schritt-Media */
-.step__media{
-  display:grid;
-  gap:12px;
-}
+.step__media{ display:grid; gap:12px; }
+.step__media a{ display:block; width:100%; }
 
-/* Text-only Steps: garantiert eine Spalte */
+/* Text-only Steps */
 .step--textonly .step__grid{ grid-template-columns: 1fr; }
 .step--textonly .step__media{ display:none; }
 
@@ -207,7 +228,7 @@ html,body{
 .ram-card strong{ display:block; margin-bottom:.25em; color:var(--text); }
 .ram-card span{ color:var(--muted); }
 
-/* ===== Schritt 6/7 “Paare” (Text neben Bild) ===== */
+/* Schritt 7 “Paare” */
 .pairs{ display:grid; gap:14px; }
 .pair{
   display:grid;
@@ -219,6 +240,7 @@ html,body{
 }
 .pair:first-child{ border-top:0; padding-top:0; }
 .pair__text{ color: var(--muted); }
+.pair__media a{ display:block; width:100%; }
 
 /* FAQ */
 details.faq{
@@ -239,13 +261,13 @@ details.faq summary{ cursor:pointer; font-weight:700; }
 
   .step__grid{
     grid-template-columns: 1fr;
-    padding: 0 14px 14px; /* Bilder groß, aber sauber “im Kasten” */
+    padding: 0 14px 14px;
   }
 
   .ram-grid{ grid-template-columns: 1fr; }
+  .download-grid{ grid-template-columns: 1fr; }
 
   .pair{ grid-template-columns: 1fr; }
 
-  /* Buttons full-ish */
-  .btn{ width: 100%; justify-content: center; }
+  .btn{ width: 100%; }
 }
