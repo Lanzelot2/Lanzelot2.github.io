@@ -10,11 +10,6 @@
 
   a { color: #58a6ff; }
 
-  /* typische Container/Boxen */
-  .container, main, article, section {
-    background: transparent;
-  }
-
   /* Bilder optional leicht abdunkeln (nur wenn nötig) */
   /* img { filter: brightness(0.95) contrast(1.05); } */
 }
