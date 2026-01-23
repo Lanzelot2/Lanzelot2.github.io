@@ -2,8 +2,6 @@
 
 <div class="tutorial">
 
-<h1>Modrinth: Modpack installieren (EbeluCraft)</h1>
-
 <p class="lead">
 Auf dem EbeluCraft-Server <strong>kann man auch komplett ohne Mods spielen</strong>, aber für Performance und Features (z. B. Ingame-Voice-Chat) ist das Modpack klar empfohlen.
 </p>
