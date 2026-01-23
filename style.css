@@ -8,7 +8,7 @@
   --surface: rgba(255,255,255,.045);
   --surface2: rgba(255,255,255,.07);
   --border: rgba(255,255,255,.12);
-  --shadow: rgba(0,0,0,.45);
+  --shadow: rgba(0,0,0,.55);
   --link: #8ab4f8;
   --linkHover: #a7c7ff;
 
@@ -26,7 +26,7 @@ html,body{
   line-height:1.65;
 }
 
-/* ===== Theme-Container & Header: volle Breite ermöglichen + blauen Titel ausblenden ===== */
+/* ===== Theme-Container & Header: Breite freigeben + blauen Titel ausblenden ===== */
 :where(main, article, .page-content, .main-content, .wrapper, .container, .container-lg, .container-xl, .markdown-body, .post, .post-content){
   width:100% !important;
   max-width:none !important;
@@ -48,34 +48,36 @@ html,body{
   display:none !important;
 }
 
-/* ===== Wrapper für dein Tutorial ===== */
+/* ===== Wrapper ===== */
 .tutorial{
-  /* Ziel: ca. 75% Screen-Breite auf Desktop, aber nicht absurd breit */
   width: min(75vw, 1600px);
   max-width: calc(100vw - 28px);
   margin: 0 auto;
   padding: clamp(14px, 2vw, 26px);
-  overflow-wrap: anywhere; /* verhindert “reingeschnittene” Links */
+  overflow-wrap: anywhere;
+}
+
+/* Überschriften: Theme-Margins killen (das war dein “1 Zeile nach unten”-Problem) */
+.tutorial h1, .tutorial h2, .tutorial h3{
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  line-height: 1.2 !important;
 }
 
 .tutorial h1{
   font-size: clamp(1.9rem, 2.4vw, 2.75rem);
   letter-spacing:-0.02em;
-  line-height:1.15;
-  margin:.2em 0 .55em;
-  border:0 !important;            /* Theme-Linien killen */
-  padding:0 !important;
+  margin-bottom: .55em !important;
 }
 .tutorial h2{
   font-size: clamp(1.25rem, 1.7vw, 1.9rem);
-  margin: 1.7em 0 .6em;
-  border:0 !important;            /* Theme-Linien killen */
-  padding:0 !important;
+  margin: 1.7em 0 .6em !important;
 }
 .tutorial h3{
   font-size: 1.08rem;
-  margin: 0;
 }
+
 .tutorial p{ margin:.85em 0; }
 .tutorial .lead{ color:var(--muted); max-width: 80ch; }
 
@@ -85,9 +87,32 @@ html,body{
 /* keine HR-Streifen */
 .tutorial hr{ display:none; }
 
-/* ===== Listen ===== */
+/* Listen */
 .checklist{ margin:.7em 0 0; padding-left: 1.1em; }
 .checklist li{ margin:.35em 0; }
+
+/* ===== Buttons (Download) ===== */
+.btnrow{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top: 10px;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:.55em;
+  padding: .65em .9em;
+  border-radius: 14px;
+  background: var(--surface2);
+  border: 1px solid rgba(255,255,255,.10);
+  text-decoration: none;
+  color: var(--text);
+}
+.btn:hover{
+  background: rgba(255,255,255,.09);
+}
+.btn small{ color: var(--muted); }
 
 /* ===== Steps ===== */
 .steps{
@@ -108,13 +133,14 @@ html,body{
 .step__head{
   display:flex;
   gap:.75em;
-  align-items:baseline;
+  align-items:center;            /* baseline raus -> wirkt nicht “runtergerutscht” */
   padding: 14px 16px 8px;
 }
 
 .step__num{
   font-weight:800;
   opacity:.95;
+  flex:0 0 auto;
 }
 .step__num::before{ content: counter(step) "."; }
 
@@ -132,24 +158,36 @@ html,body{
 
 .step__text{ color: var(--muted); }
 
-/* Media: NICHT nur auf <a> verlassen -> auch <img> direkt stylen */
-.tutorial img{
+/* Media: harte Overrides, damit Bilder NICHT klein bleiben */
+.step__media, .pair__media{
+  min-width: 0;
+}
+.step__media a, .pair__media a{
   display:block;
   width:100%;
-  height:auto;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.12);
-  box-shadow: 0 10px 28px var(--shadow);
 }
 
-/* Schritt-Media: wenn vorhanden */
+/* Bilder: kein weißer Rahmen mehr */
+.tutorial img{
+  display:block;
+  width:100% !important;
+  max-width:100% !important;
+  height:auto;
+
+  border: 0 !important;                 /* entfernt den “weißen Rahmen” */
+  border-radius: 14px;
+  box-shadow:
+    0 12px 32px var(--shadow),
+    0 0 0 1px rgba(0,0,0,.35);          /* dunkle Outline statt weißem Rand */
+}
+
+/* Schritt-Media */
 .step__media{
   display:grid;
   gap:12px;
 }
-.step__media a{ display:block; }
 
-/* Text-only Steps: keine “unsichtbare zweite Spalte” */
+/* Text-only Steps: garantiert eine Spalte */
 .step--textonly .step__grid{ grid-template-columns: 1fr; }
 .step--textonly .step__media{ display:none; }
 
@@ -169,12 +207,11 @@ html,body{
 .ram-card strong{ display:block; margin-bottom:.25em; color:var(--text); }
 .ram-card span{ color:var(--muted); }
 
-/* ===== Schritt 6: Desktop “Paare” (Text neben Bild), Mobile automatisch untereinander ===== */
+/* ===== Schritt 6/7 “Paare” (Text neben Bild) ===== */
 .pairs{ display:grid; gap:14px; }
-
 .pair{
   display:grid;
-  grid-template-columns: 1fr 2fr; /* Bild etwas größer */
+  grid-template-columns: 1fr 2fr;
   gap: 16px;
   align-items:start;
   padding: 10px 0;
@@ -182,9 +219,8 @@ html,body{
 }
 .pair:first-child{ border-top:0; padding-top:0; }
 .pair__text{ color: var(--muted); }
-.pair__media a{ display:block; }
 
-/* ===== FAQ ===== */
+/* FAQ */
 details.faq{
   margin-top: 14px;
   background: var(--surface);
@@ -203,11 +239,13 @@ details.faq summary{ cursor:pointer; font-weight:700; }
 
   .step__grid{
     grid-template-columns: 1fr;
-    padding: 0 14px 14px; /* Bilder groß, aber mit sauberem Rand */
+    padding: 0 14px 14px; /* Bilder groß, aber sauber “im Kasten” */
   }
 
   .ram-grid{ grid-template-columns: 1fr; }
 
-  /* Schritt 6: Text -> Bild -> Text -> Bild ... */
   .pair{ grid-template-columns: 1fr; }
+
+  /* Buttons full-ish */
+  .btn{ width: 100%; justify-content: center; }
 }
