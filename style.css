@@ -1,11 +1,200 @@
-:root {
-  color-scheme: light dark; /* erlaubt dem Browser passende Defaults */
+/* --- Base / Reset --- */
+* { box-sizing: border-box; }
+
+:root{
+  /* Deine festgelegten Farben beibehalten */
+  --bg: #121212;
+  --text: #B0B0B0;
+
+  /* Zusätzliche Design-Variablen (keine Änderung an bg/text) */
+  --muted: rgba(176,176,176,.78);
+  --surface: rgba(255,255,255,.045);
+  --surface-2: rgba(255,255,255,.07);
+  --border: rgba(255,255,255,.12);
+  --link: #8ab4f8;
+  --link-hover: #a7c7ff;
+  --code-bg: rgba(255,255,255,.06);
+  --shadow: rgba(0,0,0,.45);
+
+  /* Form-Controls etc. in dark rendern */
+  color-scheme: dark;
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background: #121212;
-    color: #B0B0B0;
-  }
+html, body{
+  margin: 0;
+  padding: 0;
 
+  /* Erzwingt deine Dark-Farben auf ALLEN Geräten/Themes */
+  background: var(--bg) !important;
+  color: var(--text) !important;
+
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  text-rendering: optimizeLegibility;
+}
+
+body{
+  min-height: 100vh;
+  padding: clamp(16px, 3vw, 28px);
+}
+
+/* Viele GitHub-Pages Themes packen Content in Wrapper/Container */
+:where(body, main, .main-content, .page-content, .wrapper, .container, .markdown-body){
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+/* --- Typo --- */
+h1, h2, h3{
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: 1.8em 0 .6em;
+}
+
+h1{
+  margin-top: .2em;
+  font-size: clamp(1.85rem, 3vw, 2.45rem);
+}
+
+h2{
+  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+  padding-bottom: .35em;
+  border-bottom: 1px solid var(--border);
+}
+
+h3{ font-size: 1.2rem; }
+
+p{ margin: .85em 0; }
+
+hr{
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 2em 0;
+}
+
+/* --- Links --- */
+a{
+  color: var(--link);
+  text-decoration-thickness: .08em;
+  text-underline-offset: .18em;
+}
+a:hover{ color: var(--link-hover); }
+
+/* --- Listen (Schritte als “Cards”) --- */
+ul, ol{ padding-left: 1.25em; }
+
+ol > li{
+  margin: .95em 0;
+  padding: .95em 1em;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+ol > li::marker{
+  font-weight: 800;
+  color: var(--text);
+}
+ol > li > p:first-child{ margin-top: 0; }
+ol > li > p:last-child{ margin-bottom: 0; }
+
+@media (max-width: 600px){
+  ol > li{ padding: .85em .9em; }
+}
+
+/* --- Blockquote (Hinweise) --- */
+blockquote{
+  margin: 1.2em 0;
+  padding: .9em 1em;
+  background: var(--surface);
+  border-left: 4px solid var(--border);
+  border-radius: 12px;
+  color: var(--muted);
+}
+blockquote > :first-child{ margin-top: 0; }
+blockquote > :last-child{ margin-bottom: 0; }
+
+/* --- Code --- */
+code, pre{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+code{
+  background: var(--code-bg);
+  border: 1px solid rgba(255,255,255,.10);
+  padding: .2em .35em;
+  border-radius: 8px;
+}
+
+pre{
+  background: var(--code-bg);
+  border: 1px solid rgba(255,255,255,.10);
+  padding: 1em;
+  border-radius: 14px;
+  overflow: auto;
+}
+pre code{
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+/* --- Tabellen (mobile horizontal scroll) --- */
+table{
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0 1.4em;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.02);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+th, td{
+  padding: .75em .8em;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+th{
+  text-align: left;
+  background: var(--surface-2);
+}
+tr:last-child td{ border-bottom: 0; }
+
+@media (max-width: 720px){
+  table{
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+/* --- Bilder (immer responsive) --- */
+img, video{
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: .85em 0;
+
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 10px 30px var(--shadow);
+}
+
+/* Optional: etwas weniger “wuchtig” für Screenshots */
+img.screenshot{
+  box-shadow: 0 8px 22px var(--shadow);
+}
+
+/* --- Details (FAQ/Probleme) --- */
+details{
+  margin: 1.1em 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: .85em 1em;
+}
+summary{
+  cursor: pointer;
+  font-weight: 700;
 }
