@@ -1,1 +1,4 @@
 title: Modrinth Tutorial
+markdown: kramdown
+kramdown:
+  input: GFM
