@@ -137,9 +137,9 @@ Empfohlen ist trotzdem die <strong>Modrinth App</strong>, weil es damit am einfa
         </div>
       </div>
       
+      <small style="color:rgba(176,176,176,.78); display:block; margin-top:10px;">
       </small>
     </div>
-    
   </div>
 </section>
 
