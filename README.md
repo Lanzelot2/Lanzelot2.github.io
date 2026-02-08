@@ -132,7 +132,7 @@ Empfohlen ist trotzdem die <strong>Modrinth App</strong>, weil es damit am einfa
             (die Extras (u.a Voxy) sind für Gaming-PCs/High-End sinvoll;).
           </p>
           <div class="btnrow">
-            <a class="btn" href="downloads/EbeluCraft-Standard.mrpack" download>⬇️ Download <small>(.mrpack)</small></a>
+            <a class="btn" href="EbeluCraft 1.0.0.mrpack" download>⬇️ Download <small>(.mrpack)</small></a>
           </div>
         </div>
       </div>
