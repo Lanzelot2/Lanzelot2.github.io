@@ -112,7 +112,7 @@ Empfohlen ist trotzdem die <strong>Modrinth App</strong>, weil es damit am einfa
   <div class="step__grid">
     <div class="step__text">
       Es gibt zwei Versionen. Wenn ihr unsicher seid: Nehmt erstmal <strong>Standard</strong>.
-      Für schwächere PCs (oder wenn ihr möglichst wenig Aufwand wollt) ist <strong>Lite/Performance</strong> ideal.<br><br>
+      Für schwächere PCs ist <strong>Lite/Performance</strong> ideal.<br><br>
 
       <div class="download-grid">
         <div class="dl-card">
@@ -129,18 +129,14 @@ Empfohlen ist trotzdem die <strong>Modrinth App</strong>, weil es damit am einfa
           <div class="dl-title">Standard (Normal)</div>
           <p class="dl-desc">
             Mehr Features/Komfort. Zusätzlich gibt es <strong>optionale Extras</strong>, die ihr im Modrinth-Profil aktivieren könnt
-            (sinnvoll für Gaming-PCs/High-End; nicht für typische Laptops).
+            (die Extras (u.a Voxy) sind für Gaming-PCs/High-End sinvoll;).
           </p>
           <div class="btnrow">
             <a class="btn" href="downloads/EbeluCraft-Standard.mrpack" download>⬇️ Download <small>(.mrpack)</small></a>
           </div>
         </div>
       </div>
-
-      <small style="color:rgba(176,176,176,.78); display:block; margin-top:10px;">
-        Setup im Repo: Legt die Dateien z.&nbsp;B. in <code>/downloads/</code> ab und passt nur die Dateinamen oben an.
-      </small>
-    </div>
+      
   </div>
 </section>
 
