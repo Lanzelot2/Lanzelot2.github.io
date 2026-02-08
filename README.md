@@ -121,7 +121,7 @@ Empfohlen ist trotzdem die <strong>Modrinth App</strong>, weil es damit am einfa
             Fokus auf Performance + Essentials (z.&nbsp;B. Voice-Chat). Gedacht für schwächere PCs/Laptops.
           </p>
           <div class="btnrow">
-            <a class="btn" href="downloads/EbeluCraft-Lite.mrpack" download>⬇️ Download <small>(.mrpack)</small></a>
+            <a class="btn" href="EbeluCraft Performance  1.0.0.mrpack" download>⬇️ Download <small>(.mrpack)</small></a>
           </div>
         </div>
 
