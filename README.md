@@ -137,6 +137,9 @@ Empfohlen ist trotzdem die <strong>Modrinth App</strong>, weil es damit am einfa
         </div>
       </div>
       
+      </small>
+    </div>
+    
   </div>
 </section>
 
